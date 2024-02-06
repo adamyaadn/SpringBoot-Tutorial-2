@@ -8,7 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-@Component("oracle")
+//@Component("oracle")
+@Component
 @Scope("prototype")
 public class Company {
 	

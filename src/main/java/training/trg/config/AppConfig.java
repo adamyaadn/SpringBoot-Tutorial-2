@@ -1,13 +1,15 @@
 package training.trg.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 import training.trg.beans.Department;
 import training.trg.beans.Employee;
 
-//@Configuration
+@Configuration
+@ComponentScan(basePackages = "training")
 public class AppConfig {
 	
 	@Bean("emp3")

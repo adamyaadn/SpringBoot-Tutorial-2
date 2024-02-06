@@ -21,7 +21,7 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	@Autowired @Qualifier("dept2")
+	@Autowired @Qualifier("dept3")
 	private Department dept;
 	private int salary;
 	

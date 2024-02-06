@@ -1,5 +1,6 @@
 package training.oracle.sample.springapplication2;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import training.trg.beans.Company;
@@ -18,21 +19,16 @@ public class App
      */
     public static void main( String[] args )
     {
-    	ClassPathXmlApplicationContext ctx 
-        = new ClassPathXmlApplicationContext("beans.xml");
+//    	ClassPathXmlApplicationContext ctx 
+//        = new ClassPathXmlApplicationContext("beans.xml");
+    	
+    	AnnotationConfigApplicationContext ctx = 
+    			new AnnotationConfigApplicationContext(AppConfig.class);
 
         
-//        Employee e1 = ctx.getBean("emp1",Employee.class); 
+        Employee e1 = ctx.getBean("emp4",Employee.class); 
         
-//        System.out.println(e1);
-    	
-    	Company c1 = ctx.getBean("oracle",Company.class);
-        
-        System.out.println(c1);
-        
-//        AppConfig app = new AppConfig();
-//        Employee e = app.getEmployee1();
-//        System.out.println(e);
+        System.out.println(e1);
         
         ctx.close();
     }
@@ -51,5 +47,9 @@ public class App
 //@PreDestroy -- equivalent of destroy-method (LC methods)
 //Both LC methods require javaee dependency
 //github.com/ramanakv/training
+
+//need to use AnnotationConfigApplicationContext class to fully remove the usage of beans
+//need to add componentscan in config class to specify the base package
+//this makes it fully java based config without the use of xml
 
 
